@@ -2,6 +2,10 @@
 Instructions specifically for adding a toggleable Vim mode to the ZSA Voyager on Windows.
 
 ## Pre-requisites
+***Disclaimer: These instructions are tailored towards the ZSA Voyager and Windows, but using the
+techniques in this repo you can adapt it to any other QMK compatible keyboard and operating
+system.***
+
 - Windows.
 - ZSA Voyager keyboard (although can be adapted to other QMK keyboards).
 - WSL2 with a fresh or clean install of Ubuntu 22.04.
@@ -45,5 +49,5 @@ the Vim mode exactly to your liking
 
 ## Credit
 - [QMK Firmware](https://github.com/qmk/qmk_firmware) for the base firmware.
-- [ZSA's QMK fork](https://github.com/zsa/qmk_firmware) for the ZSA firmware.
+- [ZSA's QMK Fork](https://github.com/zsa/qmk_firmware) for the ZSA firmware.
 - [QMK-Vim](https://github.com/andrewjrae/qmk-vim) for the vim integration.
