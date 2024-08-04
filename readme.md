@@ -39,8 +39,8 @@ flashing the firmware in the same way as above afterwards. This process goes as 
 - Run `qmk clean`, then compile and flash the firmware as above.
 
 ## Usage
-You can see all the available mappings and some extra information
-[here](https://github.com/andrewjrae/qmk-vim?tab=readme-ov-file#features).
+You can see all the available mappings and some extra information about how to configure the mode to
+your liking [here](https://github.com/andrewjrae/qmk-vim?tab=readme-ov-file#features).
 
 ## Credit
 - [ZSA's QMK fork](https://github.com/zsa/qmk_firmware) for the base firmware.
