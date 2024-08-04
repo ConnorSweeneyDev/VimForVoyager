@@ -37,3 +37,8 @@ flashing the firmware in the same way as above afterwards. This process goes as 
 - Manually add all the code that is marked "Manually Added" in my fork to your own `keymap.c`,
   `config.h`, and `rules.mk` files.
 - Run `qmk clean`, then compile and flash the firmware as above.
+
+## Credit
+
+- [ZSA's QMK fork](https://github.com/zsa/qmk_firmware) for the base firmware.
+- [QMK-Vim](https://github.com/andrewjrae/qmk-vim) for the vim integration.
