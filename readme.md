@@ -9,7 +9,7 @@ Instructions specifically for adding a toggleable Vim mode to the ZSA Voyager on
 ## Installation
 Start by entering Ubuntu 22.04 and running the following commands:
 - `sudo apt update && sudo apt upgrade -y`
-- `sudo apt install git g++ make llvm clang python3-pip chromium-bsu chromium-browser unzip`
+- `sudo apt install git g++ make llvm clang clang-format python3-pip chromium-browser unzip`
 - `git clone https://github.com/ConnorSweeneyDev/VimForVoyager.git && cd VimForVoyager`
 
 Next, install the QMK CLI like so:
