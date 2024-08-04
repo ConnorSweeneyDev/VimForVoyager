@@ -3,7 +3,7 @@ Instructions specifically for adding a toggleable Vim mode to the ZSA Voyager on
 
 ## Pre-requisites
 ***Disclaimer: These instructions are tailored towards the ZSA Voyager and Windows, but using the
-techniques in this repo you can adapt it to any other QMK compatible keyboard and operating
+techniques in this repository you can adapt it to any other QMK compatible keyboard and operating
 system.***
 
 - Windows.
