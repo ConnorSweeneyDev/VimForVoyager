@@ -44,5 +44,6 @@ the Vim mode exactly to your liking
 [here](https://github.com/andrewjrae/qmk-vim?tab=readme-ov-file#features).
 
 ## Credit
-- [ZSA's QMK fork](https://github.com/zsa/qmk_firmware) for the base firmware.
+- [QMK Firmware](https://github.com/qmk/qmk_firmware) for the base firmware.
+- [ZSA's QMK fork](https://github.com/zsa/qmk_firmware) for the ZSA firmware.
 - [QMK-Vim](https://github.com/andrewjrae/qmk-vim) for the vim integration.
