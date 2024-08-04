@@ -1,77 +1,39 @@
-# ZSA's fork of QMK Firmware
+# VimForVoyager
+Instructions specifically for adding a toggleable Vim mode to the ZSA Voyager on Windows.
 
-[![Current Version](https://img.shields.io/github/tag/zsa/qmk_firmware.svg)](https://github.com/zsa/qmk_firmware/tags)
-[![Build firmware](https://github.com/zsa/qmk_firmware/actions/workflows/build.yml/badge.svg)](https://github.com/zsa/qmk_firmware/actions/workflows/build.yml)
-[![Unit Tests](https://github.com/zsa/qmk_firmware/actions/workflows/unit_test.yml/badge.svg)](https://github.com/zsa/qmk_firmware/actions/workflows/unit_test.yml)
-[![GitHub contributors](https://img.shields.io/github/contributors/zsa/qmk_firmware.svg)](https://github.com/zsa/qmk_firmware/pulse/monthly)
-[![GitHub forks](https://img.shields.io/github/forks/zsa/qmk_firmware.svg?style=social&label=Fork)](https://github.com/zsa/qmk_firmware/)
+## Pre-requisites
+- Windows.
+- ZSA Voyager keyboard (although can be adapted to other QMK keyboards).
+- WSL2 with a fresh or clean install of Ubuntu 22.04.
 
-This purpose of this fork is maintain a clean repo that only contains the keyboard code that we need, and as little else as possible.  This is to keep it lightweight, since we only need a couple of keyboards. This is the repo that the EZ Configurator will pull from.
-## Documentation
+## Installation
+Start by entering Ubuntu 22.04 and running the following commands:
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install git g++ make llvm clang python3-pip chromium-bsu chromium-browser unzip`
+- `git clone https://github.com/ConnorSweeneyDev/VimForVoyager.git && cd VimForVoyager`
 
-* [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
+Next, install the QMK CLI like so:
+- `python3 -m pip install --user qmk`
+- `echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc`
+- `qmk setup -H ~/VimForVoyager -b main` - Say yes to any prompts and run `qmk hello` to
+  verify the installation.
 
-The docs are powered by [Docsify](https://docsify.js.org/) and hosted on [GitHub](/docs/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
+This repository is a modified version of ZSA's QMK fork that has a `main` keymap for the voyager
+that has a Vim mode (using [this](https://configure.zsa.io/voyager/layouts/NYBN6/latest/0) as the
+base). To use it now you can run `qmk compile -kb voyager -km main`, then move the
+`voyager_main.bin` file to your Windows machine and select the "Flash" button in the Keymapp app to
+select the file and flash the firmware.
 
-You can request changes by making a fork and opening a [pull request](https://github.com/qmk/qmk_firmware/pulls), or by clicking the "Edit this page" link at the bottom of any page.
-
-
-## Supported Keyboards
-
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Planck EZ](/keyboards/planck/ez)
-* [Moonlander Mark I](/keyboards/moonlander)
-* [Voyager](/keyboards/voyager)
-
-## Building
-
-To set up the local build enviroment to create the firmware image manually, head to the [Newbs guide from QMK](https://docs.qmk.fm/#/newbs).
-And instead of using just `qmk setup`, you will want to run this instead:
-
-```sh
-qmk setup zsa/qmk_firmware -b firmware23
-```
-
-## Maintainers
-
-QMK is developed and maintained by Jack Humbert of OLKB with contributions from the community, and of course, [Hasu](https://github.com/tmk). The OLKB product firmwares are maintained by [Jack Humbert](https://github.com/jackhumbert), the Ergodox EZ by [ZSA Technology Labs](https://github.com/zsa), the Clueboard by [Zach White](https://github.com/skullydazed), and the Atreus by [Phil Hagelberg](https://github.com/technomancy).
-
-# Update Process
-
-1. Check out branch from ZSA's master branch:
-    1. `git remote add zsa https://github.com/zsa/qmk_firmware.git`
-    2. `git fetch --all`
-    3. `git checkout -B branchname zsa/master`
-    4. `git push -u zsa branchname`
-2. Check for core changes:
-    - [https://github.com/qmk/qmk_firmware/commits/master/quantum](https://github.com/qmk/qmk_firmware/commits/master/quantum)
-    - [https://github.com/qmk/qmk_firmware/commits/master/tmk_core](https://github.com/qmk/qmk_firmware/commits/master/tmk_core)
-    - [https://github.com/qmk/qmk_firmware/commits/master/util](https://github.com/qmk/qmk_firmware/commits/master/util)
-    - [https://github.com/qmk/qmk_firmware/commits/master/drivers](https://github.com/qmk/qmk_firmware/commits/master/drivers)
-    - [https://github.com/qmk/qmk_firmware/commits/master/lib](https://github.com/qmk/qmk_firmware/commits/master/lib)
-    - These folders are the important ones for maintaining the repo and keeping it properly up to date. Most, but not all, changes on this list should be pulled into our repo.
-4. `git merge (hash|tag)`
-    - `git rm -rf docs users layouts .vscode` to remove the docs and user code that we don't want.
-    - To remove all of the keyboard exept the ones we want:
-      ```sh
-      find ./keyboards -mindepth 1 -maxdepth 1 -type d -not -name ergodox_ez -not -name planck -not -name moonlander -not -name pytest -exec git rm -rf '{}' \;
-      find ./keyboards/planck -mindepth 1 -maxdepth 1 -type d -not -name ez -not -name base -not -name glow -not -name keymaps -exec git rm -rf '{}' \;
-      ```
-    - To remove all of the keymaps from folder that we don't want:
-      ```sh
-      find ./keyboards/ -mindepth 3 -maxdepth 3 -type d -not -name default -not -name oryx -not -name webusb -not -name glow -not -name reactive -not -name shine -not -name keymaps -not -name halfmoon -exec git rm -rf '{}' \;
-      ```
-    - Restore necessary files/folders:
-      ```sh
-      git checkout HEAD -- keyboards/handwired/pytest
-      git checkout HEAD -- layouts
-      ```
-    - Resolve merge conflicts, and commit.
-
-4. Commit update
-   * Include commit info in `[changelog.md](changelog.md)`
-5. Open Pull request, and include information about the commit
-
-## Strategy
-
-To keep PRs small and easier to test, they should ideally be 1:1 with commits from QMK Firmware master. They should only group commits if/when it makes sense. Such as multiple commits for a specific feature (split RGB support, for instance)
+## Customization
+If you want your own mappings (you do), you can replace `keymap.c`, `config.h` and `rules.mk` in the
+`keyboards/voyager/keymaps/main` directory with your own, running the same compile command and
+flashing the firmware in the same way as above afterwards. This process goes as follows:
+- Create a configuration using [Oryx](https://configure.zsa.io/home).
+- Open the configuration in linux using the `chromium-browser` command.
+- Download the source code for the configuration using the "Download Source" button.
+- Find the zip file in the `~/snap/chromium/[NUMBER]/Downloads` directory.
+- Unzip the file using `unzip [FILE]` and move the `keymap.c`, `config.h`, and `rules.mk` files to
+  the `~/zsa/qmk_firmware/keyboards/voyager/keymaps/main` directory to replace the existing ones.
+- Manually add all the code that is marked "Manually Added" in my fork to your own `keymap.c`,
+  `config.h`, and `rules.mk` files.
+- Run `qmk clean`, then compile and flash the firmware as above.
