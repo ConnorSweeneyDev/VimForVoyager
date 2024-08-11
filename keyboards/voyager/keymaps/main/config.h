@@ -5,7 +5,7 @@
 
 #define ORYX_CONFIGURATOR
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define FIRMWARE_VERSION u8"NYBN6/0ZRA6"
+#define FIRMWARE_VERSION u8"NYBN6/Gx0ww"
 #define RAW_USAGE_PAGE 0xFF60
 #define RAW_USAGE_ID 0x61
 #define LAYER_STATE_8BIT
@@ -19,5 +19,4 @@
 #define VIM_G_MOTIONS      // MANUALLY ADDED
 #define VIM_PASTE_BEFORE   //
 #define VIM_REPLACE        //
-#define VIM_DOT_REPEAT     //
 #define VIM_NUMBERED_JUMPS //
