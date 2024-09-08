@@ -29,7 +29,7 @@ base). To use it now you can run `qmk compile -kb voyager -km main`, then move t
 select the file and flash the firmware.
 
 ## Customization
-If you want your own mappings (you do), you can replace `keymap.c`, `config.h` and `rules.mk` in the
+Since you want your own mappings, you can replace `keymap.c`, `config.h` and `rules.mk` in the
 `keyboards/voyager/keymaps/main` directory with your own, running the same compile command and
 flashing the firmware in the same way as above afterwards. This process goes as follows:
 - Create a configuration using [Oryx](https://configure.zsa.io/home).
@@ -40,7 +40,7 @@ flashing the firmware in the same way as above afterwards. This process goes as 
   the `~/zsa/qmk_firmware/keyboards/voyager/keymaps/main` directory to replace the existing ones.
 - Manually add all the code that is marked "Manually Added" in my fork to your own `keymap.c`,
   `config.h`, and `rules.mk` files.
-- Run `qmk clean`, then compile and flash the firmware as above.
+- Run `qmk clean`, then compile with `qmk compile -kb voyager -km main` and flash using Keymapp.
 
 ## Usage
 You can see all the available mappings and all the extra information you need about how to configure
