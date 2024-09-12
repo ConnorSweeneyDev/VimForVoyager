@@ -37,7 +37,7 @@ flashing the firmware in the same way as above afterwards. This process goes as 
 - Download the source code for the configuration using the "Download Source" button.
 - Find the zip file in the `~/snap/chromium/[NUMBER]/Downloads` directory.
 - Unzip the file using `unzip [FILE]` and move the `keymap.c`, `config.h`, and `rules.mk` files to
-  the `~/zsa/qmk_firmware/keyboards/voyager/keymaps/main` directory to replace the existing ones.
+  the `keyboards/voyager/keymaps/main` directory to replace the existing ones.
 - Manually add all the code that is marked "Manually Added" in my fork to your own `keymap.c`,
   `config.h`, and `rules.mk` files.
 - Run `qmk clean`, then compile with `qmk compile -kb voyager -km main` and flash using Keymapp.

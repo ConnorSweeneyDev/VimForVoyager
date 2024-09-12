@@ -7,7 +7,7 @@
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   MAC_SPOTLIGHT,
-  VIM_MODE_TOGGLE, // MANUALLY ADDED
+  VIM_MODE, // MANUALLY ADDED
 };
 
 
@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_NUM,         KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           LGUI(KC_L),     
     KC_CAPS,        KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           MAC_SPOTLIGHT,  
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           TT(2),          VIM_MODE_TOGGLE /* MANUALLY ADDED */, 
+    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           TT(2),          VIM_MODE /* MANUALLY ADDED */, 
     KC_LEFT_GUI,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_SHIFT, KC_RIGHT_GUI,   
                                                     MT(MOD_LSFT, KC_SPACE),MT(MOD_LCTL, KC_ENTER),                                LT(1,KC_TAB),   MT(MOD_LALT, KC_BSPC)
   ),
@@ -31,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Q),     KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     LALT(LGUI(LCTL(KC_5))),LALT(LGUI(LCTL(KC_6))),LALT(LGUI(LCTL(KC_7))),LALT(LGUI(LCTL(KC_8))),LALT(LGUI(LCTL(KC_9))),LALT(LGUI(LCTL(KC_0))),                                LALT(LGUI(LCTL(KC_1))),LALT(LGUI(LCTL(KC_2))),LALT(LGUI(LCTL(KC_3))),LALT(LGUI(LCTL(KC_4))),KC_TRANSPARENT, KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_C),     LGUI(KC_Z),     KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-                                                    KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          KC_NO
+    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Z),     KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+                                                    KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          LGUI(KC_C)
   ),
 };
 
@@ -99,9 +99,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }                                         //
 
   switch (keycode) {
-    case VIM_MODE_TOGGLE:                         //
-    if (record->event.pressed) toggle_vim_mode(); // MANUALLY ADDED
-    return false;                                 //
+    case VIM_MODE:                                  //
+      if (record->event.pressed) toggle_vim_mode(); // MANUALLY ADDED
+      return false;                                 //
 
     case MAC_SPOTLIGHT:
       HCS(0x221);
