@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Q),     KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Q),     LGUI(KC_W),     KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     LALT(LGUI(LCTL(KC_5))),LALT(LGUI(LCTL(KC_6))),LALT(LGUI(LCTL(KC_7))),LALT(LGUI(LCTL(KC_8))),LALT(LGUI(LCTL(KC_9))),LALT(LGUI(LCTL(KC_0))),                                LALT(LGUI(LCTL(KC_1))),LALT(LGUI(LCTL(KC_2))),LALT(LGUI(LCTL(KC_3))),LALT(LGUI(LCTL(KC_4))),KC_TRANSPARENT, KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Z),     KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-                                                    KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          LGUI(KC_C)
+    KC_NO,          KC_NO,          KC_NO,          LGUI(KC_C),     LGUI(KC_Z),     KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+                                                    KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          KC_NO
   ),
 };
 
