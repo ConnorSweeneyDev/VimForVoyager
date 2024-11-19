@@ -15,16 +15,16 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_NUM,         KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           LGUI(KC_A),     
-    KC_CAPS,        KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           MAC_SPOTLIGHT,  
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           TT(2),          VIM_MODE /* MANUALLY ADDED */, 
-    KC_LEFT_GUI,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_SHIFT, KC_RIGHT_GUI,   
+    KC_CAPS,        KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           VIM_MODE /* MANUALLY ADDED */, 
+    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           TT(2),          MAC_SPOTLIGHT,  
+    KC_LEFT_GUI,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_RIGHT_CTRL,  KC_RIGHT_SHIFT, KC_RIGHT_ALT,   KC_RIGHT_GUI,   
                                                     MT(MOD_LSFT, KC_SPACE),MT(MOD_LCTL, KC_ENTER),                                LT(1,KC_TAB),   MT(MOD_LALT, KC_BSPC)
   ),
   [1] = LAYOUT_voyager(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
     KC_INSERT,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_LBRC,        KC_RBRC,        KC_UP,          KC_MINUS,       KC_EQUAL,       KC_GRAVE,       
     KC_ESCAPE,      KC_6,           KC_7,           KC_8,           KC_9,           KC_0,                                           KC_QUOTE,       KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_SCLN,        KC_SLASH,       
-    KC_LEFT_GUI,    KC_HOME,        KC_END,         KC_DELETE,      KC_PGDN,        KC_PAGE_UP,                                     KC_COMMA,       KC_DOT,         KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_SHIFT, KC_BSLS,        
+    KC_SCRL,        KC_HOME,        KC_END,         KC_DELETE,      KC_PGDN,        KC_PAGE_UP,                                     KC_COMMA,       KC_DOT,         KC_RIGHT_CTRL,  KC_RIGHT_SHIFT, KC_RIGHT_ALT,   KC_BSLS,        
                                                     MT(MOD_LSFT, KC_SPACE),MT(MOD_LCTL, KC_ENTER),                                KC_TRANSPARENT, MT(MOD_LALT, KC_BSPC)
   ),
   [2] = LAYOUT_voyager(
@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          LGUI(KC_Q),     LGUI(KC_W),     KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     LALT(LGUI(LCTL(KC_5))),LALT(LGUI(LCTL(KC_6))),LALT(LGUI(LCTL(KC_7))),LALT(LGUI(LCTL(KC_8))),LALT(LGUI(LCTL(KC_9))),LALT(LGUI(LCTL(KC_0))),                                LALT(LGUI(LCTL(KC_1))),LALT(LGUI(LCTL(KC_2))),LALT(LGUI(LCTL(KC_3))),LALT(LGUI(LCTL(KC_4))),KC_TRANSPARENT, KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          LGUI(KC_C),     LGUI(KC_Z),     KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-                                                    KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          KC_NO
+                                                    KC_LEFT_SHIFT,  KC_LEFT_CTRL,                                   KC_NO,          KC_LEFT_ALT
   ),
 };
 
