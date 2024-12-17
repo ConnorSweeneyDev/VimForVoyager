@@ -3,11 +3,13 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
-#define ORYX_CONFIGURATOR
+#undef TAPPING_TERM
+#define TAPPING_TERM 135
+
 #define USB_SUSPEND_WAKEUP_DELAY 0
+#define CAPS_LOCK_STATUS
+#define SERIAL_NUMBER "NYBN6/ba3g5"
 #define FIRMWARE_VERSION u8"NYBN6/Mm3zX"
-#define RAW_USAGE_PAGE 0xFF60
-#define RAW_USAGE_ID 0x61
 #define LAYER_STATE_8BIT
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
